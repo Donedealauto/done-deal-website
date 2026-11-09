@@ -22,6 +22,42 @@
 @media (max-width: 1020px) {
  .nav-wrap > .button { margin-inline-start: auto; }
  .nav-wrap .menu-toggle { margin-inline-start: 0; }
+
+ .nav-wrap nav.open {
+  background: #10233c;
+  border-bottom: 0;
+  box-shadow: 0 14px 28px #10233c33;
+  padding: 10px clamp(20px, 5vw, 32px) 14px;
+ }
+ .nav-wrap nav.open a {
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 50px;
+  padding: 12px 8px;
+  color: #f6f9ff;
+  font-weight: 650;
+ }
+ .nav-wrap nav.open a + a { border-top: 1px solid #3b4e68; }
+ .nav-wrap nav.open a:hover,
+ .nav-wrap nav.open a[aria-current="page"] { color: #a8c7ff; }
+ .nav-wrap nav.open a:focus-visible {
+  outline: 2px solid #a8c7ff;
+  outline-offset: -2px;
+ }
+ .nav-wrap nav.open a::before { content: none; }
+ .nav-wrap nav.open a::after,
+ .nav-wrap nav.open a[aria-current="page"]::after {
+  content: "";
+  position: static;
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  margin-inline-end: 4px;
+  background: none;
+  border: solid #a8c7ff;
+  border-width: 1.5px 1.5px 0 0;
+  transform: rotate(45deg);
+ }
 }
 @media (max-width: 760px) {
  .site-brand-mark { width: 39px; }
