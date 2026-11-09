@@ -1,0 +1,1 @@
+{"name":"done-deal-auto-group","version":"1.0.0","private":true,"scripts":{"build":"python3 scripts/build.py","check":"node --check dist/assets/site.js"}}

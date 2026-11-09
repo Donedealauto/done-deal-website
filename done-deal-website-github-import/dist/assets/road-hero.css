@@ -1,0 +1,79 @@
+.road-hero {
+ position: relative;
+ isolation: isolate;
+ overflow: hidden;
+ display: grid;
+ align-items: center;
+ min-height: clamp(350px, 35vw, 510px);
+ padding-block: clamp(52px, 7vw, 100px) clamp(72px, 7vw, 100px);
+ color: #fff;
+ background: #12243d var(--road-poster) center 56% / cover no-repeat;
+}
+.road-hero-video, .road-hero::after {
+ position: absolute;
+ inset: 0;
+ width: 100%;
+ height: 100%;
+ pointer-events: none;
+}
+.road-hero-video { object-fit: cover; object-position: center 56%; z-index: -2; }
+.road-hero::after {
+ content: "";
+ z-index: -1;
+ background: linear-gradient(90deg, rgba(9,24,43,.96) 0%, rgba(9,24,43,.84) 40%, rgba(9,24,43,.58) 64%, rgba(9,24,43,.24) 100%);
+}
+.road-hero-kicker {
+ margin: 0 0 14px;
+ color: #b9d2ff;
+ font-size: .8rem;
+ font-weight: 750;
+ letter-spacing: .1em;
+ text-transform: uppercase;
+}
+.road-hero-intro h1 {
+ max-width: 18ch;
+ margin: 0;
+ color: #fff;
+ font-size: clamp(3rem, 6.3vw, 5.5rem);
+ line-height: 1.03;
+ letter-spacing: -.05em;
+ text-wrap: balance;
+}
+.road-hero-lead {
+ max-width: 43ch;
+ margin: 18px 0 0;
+ color: #d8e3f4;
+ font-size: clamp(1.05rem, 1.65vw, 1.35rem);
+ line-height: 1.55;
+}
+.road-hero-control:not([hidden]) {
+ position: absolute;
+ right: clamp(20px, 4vw, 52px);
+ bottom: 16px;
+ display: grid;
+ place-items: center;
+ width: 44px;
+ height: 44px;
+ padding: 0;
+ border: 1px solid rgba(207,224,249,.76);
+ border-radius: 50%;
+ background: rgba(9,24,43,.86);
+ color: #fff;
+ cursor: pointer;
+}
+.road-hero-control:hover { background: #253f61; }
+.road-hero-control:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.road-hero-control[data-playing] .road-icon-play,
+.road-hero-control:not([data-playing]) .road-icon-pause { display: none; }
+
+.road-hero + .service-detail,
+.road-hero + .about-grid,
+.road-hero + .contact-grid { margin-top: clamp(34px, 5vw, 64px); }
+
+@media (max-width: 760px) {
+ .road-hero::after { background: linear-gradient(90deg, rgba(9,24,43,.94), rgba(9,24,43,.68)); }
+ .road-hero-intro h1 { font-size: clamp(2.35rem, 9vw, 4rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+ .road-hero-video { display: none; }
+}

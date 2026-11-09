@@ -1,0 +1,54 @@
+.story-index-row {
+ padding-block: clamp(36px, 5vw, 76px);
+ border-bottom: 1px solid #e0e7ef;
+}
+.story-index-row:nth-child(even) { background: #f3f6fa; }
+.story-index-layout {
+ display: grid;
+ grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+ grid-template-areas: "photo copy";
+ align-items: center;
+ gap: clamp(32px, 7vw, 96px);
+}
+.story-index-row:nth-child(even) .story-index-layout { grid-template-areas: "copy photo"; }
+.story-index-photo {
+ grid-area: photo;
+ overflow: hidden;
+ aspect-ratio: 1.44;
+ border-radius: 16px;
+ background: #e5ecf4;
+}
+.story-index-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.story-index-row[data-story="liz"] img { object-position: center 37%; }
+.story-index-row[data-story="joanne"] img { object-position: center 24%; }
+.story-index-row[data-story="california"] img { object-position: center 52%; }
+.story-index-copy { grid-area: copy; }
+.story-index-meta { margin: 0 0 13px; color: #245395; font-weight: 750; font-size: .9rem; }
+.story-index-copy h2 {
+ margin: 0;
+ color: #12243d;
+ font-size: clamp(1.9rem, 3.5vw, 3.2rem);
+ line-height: 1.1;
+ letter-spacing: -.04em;
+}
+.story-index-summary { max-width: 47ch; color: #526171; margin: 16px 0 18px; }
+.story-index-topic { color: #526171; font-size: .82rem; font-weight: 650; margin: 0 0 18px; }
+.story-index-link {
+ color: #124ce0;
+ display: inline-flex;
+ min-height: 44px;
+ align-items: center;
+ gap: 10px;
+ font-weight: 750;
+ border-bottom: 1px solid #c4d5ff;
+}
+.story-index-link:hover { border-color: currentColor; }
+.story-index-link:focus-visible { outline: 2px solid #155bff; outline-offset: 4px; }
+@media (max-width: 760px) {
+ .story-index-layout, .story-index-row:nth-child(even) .story-index-layout {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "photo" "copy";
+  gap: 24px;
+ }
+ .story-index-photo { border-radius: 12px; }
+}
