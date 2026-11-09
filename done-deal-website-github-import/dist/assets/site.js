@@ -10,6 +10,8 @@ if(form){
  const heading=document.querySelector('#delivery-heading'), note=document.querySelector('#delivery-note');
  let configured=false, token='', requestText='', busy=false, prepared=false;
  const announce=message=>{status.textContent=message;};
+ const confirmation=document.querySelector('#quote-confirmation');
+ confirmation?.addEventListener('close',()=>submit.focus({preventScroll:true}));
  const errors=document.querySelector('#form-errors');
  const controls=[...form.querySelectorAll('input:not([name="website"]),select,textarea:not([readonly])')];
  const invalidMessage=field=>{
@@ -79,14 +81,19 @@ if(form){
   if(!configured){prepare(data);announce('Request prepared—not sent. Review it below and send it from your email app.');return;}
   if(!token){prepare(data);announce('Please complete the security check to send online, or use the email option below.');return;}
   busy=true;submit.disabled=true;submit.textContent='Sending…';controls.forEach(field=>{field.dataset.wasDisabled=String(field.disabled);field.disabled=true;});
+  let sent=false;
   try{
    const r=await fetch('/api/quote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...data,turnstileToken:token}),signal:AbortSignal.timeout(30000)});
    const result=r.headers.get('content-type')?.includes('application/json')?await r.json():null;
    if(!r.ok||result?.ok!==true){const error=new Error('delivery-unconfirmed');error.status=r.status;throw error;}
-   announce('Thank you. Your request has been accepted for delivery to Done Deal. We’ll follow up using the details you provided.');form.reset();controls.forEach(field=>{field.removeAttribute('aria-invalid');document.getElementById(field.id+'-error').hidden=true;});
+   sent=true;form.reset();controls.forEach(field=>{field.removeAttribute('aria-invalid');document.getElementById(field.id+'-error').hidden=true;});
   }catch(error){
    prepare(data,true);announce(error.status===429?'Too many attempts. Please wait a few minutes before trying again, or use the email option below.':error.status===400?'We couldn’t accept the request. Check your details and complete a fresh security check, or use the email option below.':'We couldn’t confirm online delivery. Your details are still here. Review the email option below, or call (631) 525-7010.');
   }finally{controls.forEach(field=>{field.disabled=field.dataset.wasDisabled==='true';});updateIntent();busy=false;submit.disabled=false;submit.textContent='Send my request';token='';window.turnstile?.reset();}
+  if(sent){
+   if(typeof confirmation?.showModal==='function')confirmation.showModal();
+   announce('Quote request submitted. Our team will review your request and follow up using the contact details you provided.');
+  }
  });
  document.querySelector('#copy-request').addEventListener('click',async()=>{
   try{await navigator.clipboard.writeText(requestText);announce('Message copied. Paste it into an email to '+recipient+' and press Send. Copying does not send it.');}
