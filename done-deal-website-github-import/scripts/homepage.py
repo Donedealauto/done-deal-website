@@ -10,7 +10,7 @@ def render_home():
 
  <div class="campaign-opening">
   <h1 id="hero-heading">Car shopping sucks.<br><span>We make it better.</span></h1>
-  <div class="campaign-intro"><p><span class="campaign-intro-wide">Your next car. A better overall deal.<br>We handle the work.</span><span class="campaign-intro-compact">A better deal. We handle the work.</span></p><div class="actions"><a class="button" href="/request-a-quote/">Request a quote</a><a class="button campaign-call" href="tel:+16315257010">Talk to us</a></div></div>
+  <div class="campaign-intro"><p><span class="campaign-intro-wide">Your next car. A better overall deal.<br>We handle the work.</span><span class="campaign-intro-compact">A better deal. We handle the work.</span></p><div class="actions"><a class="button" href="/request-a-quote/">Request a quote</a><a class="button campaign-call campaign-contact-desktop" href="/contact/">Talk to us</a><a class="button campaign-call campaign-contact-mobile" href="tel:+16315257010">Talk to us</a></div></div>
  </div>
  <div class="campaign-panorama"><img src="/assets/family-handoff-pulled-back.webp" srcset="/assets/family-handoff-mobile.webp 768w, /assets/family-handoff-pulled-back.webp 1000w" sizes="(max-width: 760px) calc(88vw - 35px), (max-width: 1330px) 42vw, 550px" width="1000" height="1000" fetchpriority="high" alt="Illustrative family receiving the keys beside a new Volvo SUV in a driveway"></div>
 </section>
