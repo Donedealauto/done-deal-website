@@ -60,7 +60,18 @@
 .campaign-intent-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
 .campaign-intent-links a{display:flex;justify-content:space-between;align-items:center;gap:14px;color:#124ce0;font-weight:650;min-height:56px;padding:5px 24px;border-left:1px solid #d6dde5}
 .campaign-intent-links a:first-child{border-left:0;padding-left:0}.campaign-intent-links a:last-child{padding-right:0}
-.campaign-intent-links a:hover{background:#f4f7ff}.campaign-intent-arrow{flex:none}
+.campaign-intent-arrow{flex:none}
+.campaign-intent-links a:focus-visible{background:#edf3ff;color:#103aa8;outline:2px solid #155bff;outline-offset:-2px}
+@media(min-width:761px) and (hover:hover) and (pointer:fine){
+ .campaign-intent-links a:hover{background:#edf3ff;color:#103aa8}
+ .campaign-intent-links a:hover .campaign-intent-label{text-decoration:underline;text-underline-offset:4px}
+}
+@media(min-width:761px) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .campaign-intent-links a,.campaign-intent-label,.campaign-intent-arrow{transition:transform .16s ease-out,background-color .16s ease-out,color .16s ease-out}
+ .campaign-intent-label{transform-origin:left center}
+ .campaign-intent-links a:hover .campaign-intent-label{transform:translateY(-1px) scale(1.035)}
+ .campaign-intent-links a:hover .campaign-intent-arrow{transform:translateX(4px)}
+}
 .campaign-close{background:#155bff;padding:38px 0;color:white}
 .campaign-close>.wrap{display:flex;align-items:center;justify-content:space-between;gap:32px}
 .campaign-close h2{font-size:clamp(1.9rem,3vw,2.8rem);line-height:1.15}
