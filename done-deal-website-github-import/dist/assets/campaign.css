@@ -23,6 +23,7 @@
 .campaign-value-heading{text-align:center;max-width:740px;margin:0 auto 44px}
 .campaign-value h2{font-size:clamp(2.25rem,4vw,3.5rem);line-height:1.12;margin-bottom:20px}
 .campaign-value-heading>p{font-size:1.18rem;line-height:1.6;color:#526171}
+@media(min-width:761px){.campaign-value-heading>p br{display:none}}
 .campaign-benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .campaign-benefit{display:flex;flex-direction:column;min-width:0;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 10px 28px rgba(26,52,92,.10)}
 .benefit-copy{padding:30px 28px 24px;position:relative;z-index:1}
