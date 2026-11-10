@@ -1,4 +1,4 @@
-const respond=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
+const respond=(data,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store','X-Robots-Tag':'noindex'}});
 export async function onRequestPost({request,env}) {
  if(!env.RESEND_API_KEY||!env.LEAD_TO_EMAIL||!env.LEAD_FROM_EMAIL||!env.TURNSTILE_SECRET_KEY)return respond({error:'Online sending is not available right now. Please use the email link on our contact page or call (631) 525-7010.'},503);
  if(request.headers.get('Origin')!==new URL(request.url).origin)return respond({error:'Please send your request from the Done Deal website.'},403);

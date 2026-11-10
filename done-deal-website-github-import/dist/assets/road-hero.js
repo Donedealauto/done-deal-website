@@ -6,6 +6,7 @@
  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
  const connection = navigator.connection;
  let pausedByVisitor = false;
+ let autoplayReady = false;
 
  function syncControl() {
   const playing = !video.paused;
@@ -14,6 +15,7 @@
  }
 
  function play() {
+  if (!video.getAttribute('src')) video.src = video.dataset.src;
   video.play().catch(syncControl);
  }
 
@@ -23,9 +25,8 @@
    control.hidden = true;
    return;
   }
-  if (!video.getAttribute('src')) video.src = video.dataset.src;
   control.hidden = Boolean(video.error);
-  if (!pausedByVisitor && !video.error) play();
+  if (autoplayReady && !pausedByVisitor && !video.error && video.paused) play();
  }
 
  video.addEventListener('play', syncControl);
@@ -39,4 +40,14 @@
  motion.addEventListener('change', syncMotion);
  connection?.addEventListener('change', syncMotion);
  syncMotion();
+
+ // Leave the poster visible during initial rendering; playback remains available on demand.
+ function scheduleAutoplay() {
+  window.setTimeout(() => {
+   autoplayReady = true;
+   syncMotion();
+  }, 1500);
+ }
+ if (document.readyState === 'complete') scheduleAutoplay();
+ else window.addEventListener('load', scheduleAutoplay, { once: true });
 })();
