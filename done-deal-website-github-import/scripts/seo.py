@@ -23,7 +23,7 @@ METADATA = {
     "/about/": ("About Done Deal Auto Group", "Learn how Done Deal Auto Group helps customers search for a vehicle, compare offers, and negotiate the details before making a decision.", "Meet Done Deal Auto Group", "About"),
     "/contact/": ("Contact Done Deal Auto Group", "Call, text, or email Done Deal Auto Group in Deer Park, New York, with questions about buying, leasing, trading in, or returning a vehicle.", "Talk to Done Deal Auto Group", "Contact"),
     "/request-a-quote/": ("Request a Car Quote", "Tell Done Deal Auto Group what you’re looking for, your budget, and your timing. Request a quote without committing to a purchase.", "Request a car quote", "Request a Quote"),
-    "/customer-stories/": ("Customer Stories", "See how Done Deal helped Ed, Liz, Joanne, and Christina compare offers, move out of leases, trade in vehicles, and find their next cars.", "Real customers. Better deals.", "Customer Stories"),
+    "/customer-stories/": ("Testimonials", "See how Done Deal helped Ed, Liz, Joanne, and Christina compare offers, move out of leases, trade in vehicles, and find their next cars.", "Real customers. Better deals.", "Testimonials"),
     "/customer-stories/california/": ("Christina’s Mercedes-Benz GLS 450 Story", "See how Done Deal helped Christina save on a 2026 Mercedes-Benz GLS 450 in California and end her existing lease early without additional charges.", "Christina’s new Mercedes-Benz", "Christina"),
     "/customer-stories/virginia/": ("Ed’s Toyota Sienna Story", "See how Done Deal helped Ed end his lease early and move into a Toyota Sienna, with home delivery and driveway pickup in Virginia.", "Ed’s Toyota Sienna, delivered", "Ed"),
     "/customer-stories/liz/": ("Liz’s Acura MDX Lease Story", "See how Done Deal matched Liz’s trade-in offer and helped her lease a new Acura MDX after her previous car passed 100,000 miles.", "Liz’s new Acura MDX", "Liz"),
@@ -49,7 +49,7 @@ def structured_data(path, label):
         }
     trail = [("Home", "/")]
     if path.startswith("/customer-stories/") and path != "/customer-stories/":
-        trail.append(("Customer Stories", "/customer-stories/"))
+        trail.append(("Testimonials", "/customer-stories/"))
     trail.append((label, path))
     return {
         "@context": "https://schema.org", "@type": "BreadcrumbList",

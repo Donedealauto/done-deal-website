@@ -48,7 +48,7 @@ def render_stories(show_index_link=False):
  <div class="story-slide-copy"><p class="story-slide-meta">{meta}</p><h3>{title}</h3><p class="story-slide-summary">{summary}</p><a class="story-slide-link" href="/customer-stories/{slug}/">Read {name}’s story <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10"/></svg></a></div>
 </article>''')
         dots.append(f'<button type="button" class="story-dot" data-story-go="{i-1}" aria-label="Show {name}’s story"></button>')
-    index_link = '<a class="stories-view-all" href="/customer-stories/">View All Customer Stories <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>' if show_index_link else ''
+    index_link = '<a class="stories-view-all" href="/customer-stories/">View All Testimonials <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>' if show_index_link else ''
     return f'''<section class="stories-carousel" aria-labelledby="proof-heading" data-stories>
  <div class="wrap stories-carousel-heading">
   <h2 id="proof-heading">Real customers. Better deals.</h2>
@@ -98,7 +98,7 @@ def render_story_index():
  </div>
 </article>''')
     hero = render_road_hero(
-        'Customer stories',
+        'Testimonials',
         'Every deal<br>has a story.',
         'See how Done Deal helped four customers find a better price, make an easier switch, or get their time back.',
         'stories-open-road',
