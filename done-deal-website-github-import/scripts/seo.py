@@ -8,8 +8,8 @@ from xml.etree.ElementTree import Element, SubElement, tostring
 # Update this origin when a custom domain is confirmed live.
 ORIGIN = "https://done-deal-website.pages.dev"
 NAME = "Done Deal Auto Group"
-CARD_PATH = "/assets/done-deal-share.jpg"
-CARD_ALT = "Done Deal Auto Group’s D-road logo beside a blue road motif on a navy background."
+CARD_PATH = "/assets/done-deal-road-share.jpg"
+CARD_ALT = "The Done Deal Auto Group logo centered over a darkened open road."
 HOME_TITLE = "Done Deal Auto Group | Car Buying & Leasing Help"
 HOME_DESCRIPTION = (
     "Done Deal Auto Group helps you find the right car, compare buying and "
@@ -18,7 +18,7 @@ HOME_DESCRIPTION = (
 
 # Search title, search description, short share title, and breadcrumb label.
 METADATA = {
-    "/": (HOME_TITLE, HOME_DESCRIPTION, "A better car shopping experience", "Home"),
+    "/": (HOME_TITLE, HOME_DESCRIPTION, "Car Shopping sucks, We do it for you.", "Home"),
     "/services/": ("Car Buying, Leasing & Trade-In Help", "Get help buying or leasing a new car, evaluating a trade-in, or planning a lease return. Done Deal explains the options and helps negotiate the offer.", "Car buying and leasing help", "Services"),
     "/about/": ("About Done Deal Auto Group", "Learn how Done Deal Auto Group helps customers search for a vehicle, compare offers, and negotiate the details before making a decision.", "Meet Done Deal Auto Group", "About"),
     "/contact/": ("Contact Done Deal Auto Group", "Call, text, or email Done Deal Auto Group in Deer Park, New York, with questions about buying, leasing, trading in, or returning a vehicle.", "Talk to Done Deal Auto Group", "Contact"),
