@@ -8,8 +8,8 @@ from xml.etree.ElementTree import Element, SubElement, tostring
 # Update this origin when a custom domain is confirmed live.
 ORIGIN = "https://done-deal-website.pages.dev"
 NAME = "Done Deal Auto Group"
-CARD_PATH = "/assets/done-deal-road-share.jpg"
-CARD_ALT = "The Done Deal Auto Group logo centered over a darkened open road."
+CARD_PATH = "/assets/done-deal-open-road-share.jpg"
+CARD_ALT = "The white and blue Done Deal Auto Group logo centered over an open road."
 HOME_TITLE = "Done Deal Auto Group | Car Buying & Leasing Help"
 HOME_DESCRIPTION = (
     "Done Deal Auto Group helps you find the right car, compare buying and "
