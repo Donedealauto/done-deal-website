@@ -11,7 +11,6 @@
 .campaign-hero h1 span{color:var(--campaign-blue)}
 .campaign-intro{display:flex;flex-direction:column;align-items:flex-start;gap:32px;margin-top:28px}
 .campaign-intro>p{font-size:1.15rem;line-height:1.55;color:#414f5e;max-width:32ch}
-.campaign-intro-compact{display:none}
 .campaign-intro .actions{display:flex;flex-wrap:wrap;gap:12px;margin:0}
 .campaign-hero .button{border-radius:8px}
 .campaign-hero .campaign-call{background:#fff;border:1px solid #b7c1ce;color:#111820;min-width:130px;justify-content:center}
@@ -82,7 +81,7 @@
 @media(max-width:1100px){.home-page .wrap{width:calc(100% - 56px)}.campaign-value-grid{gap:40px}.campaign-intent-links a{padding-inline:15px;font-size:.9375rem}}
 @media(max-width:760px){
  .home-page .wrap{width:calc(100% - 40px)}.home-page .nav-wrap{height:72px}.home-page .nav-wrap nav{top:72px}
- .home-page .campaign-hero{grid-template-columns:1fr;gap:32px;min-height:0;padding-block:36px 40px}.campaign-opening{padding:0}.campaign-hero h1{font-size:clamp(2.5rem,8.7vw,3.8rem);line-height:1.08;max-width:16ch}.campaign-intro{margin-top:22px;gap:26px}.campaign-intro>p{font-size:1rem;max-width:none;text-wrap:wrap}.campaign-intro-wide{display:none}.campaign-intro-compact{display:inline}.campaign-intro .actions{margin:0;gap:12px}.campaign-panorama{aspect-ratio:1.08}.campaign-panorama img{object-position:50% center}
+ .home-page .campaign-hero{grid-template-columns:1fr;gap:32px;min-height:0;padding-block:36px 40px}.campaign-opening{padding:0}.campaign-hero h1{font-size:clamp(2.5rem,8.7vw,3.8rem);line-height:1.08;max-width:16ch}.campaign-intro{margin-top:22px;gap:26px}.campaign-intro>p{font-size:1rem;max-width:none;text-wrap:wrap}.campaign-intro .actions{margin:0;gap:12px}.campaign-panorama{aspect-ratio:1.08}.campaign-panorama img{object-position:50% center}
  .campaign-value{padding:38px 0}.campaign-value-grid{grid-template-columns:1fr;gap:30px}.campaign-value h2 br{display:none}.campaign-value-grid>div>p{max-width:48ch}.campaign-value h2{font-size:2rem}
  .campaign-ledger article{gap:22px;padding:20px 0}.campaign-ledger h3{font-size:1rem}.campaign-ledger p{font-size:.875rem}
  .campaign-process{padding:38px 0}.campaign-process ol{grid-template-columns:1fr;gap:22px;margin-top:26px}.campaign-process li{display:grid;grid-template-columns:34px 1fr;gap:0 16px;padding-right:0}.campaign-process li>span{grid-row:1/3;margin:0;font-size:1rem;padding-top:3px}.campaign-process li p{grid-column:2;max-width:none}.campaign-process h3{font-size:1.1rem;margin-bottom:5px}
